@@ -1,0 +1,10 @@
+<p>
+  <strong>Apple Podcast - Help</strong>
+  <mat-icon class="link-icon" (click)="openHelp()">link</mat-icon>
+</p>
+<p>An episode description.</p>
+<p><code>description</code> is text containing one or more sentences describing your episode to potential listeners. You can specify up to 4000 characters. You can use rich text formatting and some HTML (<code>&lt;p&gt;</code>,
+  <code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;a&gt;</code>) if wrapped in the <code>&lt;CDATA&gt;</code> tag.</p>
+<p>To include links in your description or rich HTML, adhere to the following technical guidelines: enclose all portions of your XML that contain embedded HTML in a CDATA section to prevent formatting issues, and to ensure proper link
+  functionality. For example:</p>
+<div class="CodeLines"><code class="CodeLine">  &lt;![CDATA[</code><code class="CodeLine">    &lt;a href="http://www.apple.com"&gt;Apple&lt;/a&gt;</code><code class="CodeLine">  ]]&gt;</code></div>

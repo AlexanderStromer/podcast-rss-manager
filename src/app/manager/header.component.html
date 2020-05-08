@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Podcast RSS Manager</span>
+    <span class="spacer"></span>
+    <mat-icon class="icon" matTooltip="Upload RSS file" (click)="uploadFile_click()">folder_open</mat-icon>
+    <mat-icon class="icon" matTooltip="Download RSS file" (click)="downloadFile_click()">save_alt</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+<input type="file" (change)="uploadFile_change()" placeholder="Upload file..." style="display: none;" accept=".rss,.xml" #file />

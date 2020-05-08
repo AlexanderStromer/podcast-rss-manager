@@ -1,0 +1,21 @@
+.help-icon {
+  position: absolute;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.help-icon-input {
+  margin-top: 13px;
+}
+
+.help-icon-checkbox {
+  margin-top: 0;
+}
+
+.help-icon-textarea {
+  margin-top: 72px;
+}
+
+.help-checkboxcontainer {
+  display: inline-block;
+}

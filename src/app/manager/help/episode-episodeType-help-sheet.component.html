@@ -1,0 +1,43 @@
+<p>
+  <strong>Apple Podcast - Help</strong>
+  <mat-icon class="link-icon" (click)="openHelp()">link</mat-icon>
+</p>
+<p>The episode type.</p>
+<p>If an episode is a trailer or bonus content, use this tag.</p>
+<p>Where the episodeType value can be one of the following:</p>
+<ul>
+  <li>
+    <p><strong>full</strong> (default). Specify full when you are submitting the complete content of your show.</p>
+  </li>
+  <li>
+    <p><strong>trailer</strong>. Specify trailer when you are submitting a short, promotional piece of content that represents a preview of your current show.</p>
+  </li>
+  <li>
+    <p><strong>bonus</strong>. Specify bonus when you are submitting extra content for your show (for example, behind the scenes information or interviews with the cast) or cross-promotional content for another show.</p>
+  </li>
+</ul>
+<p>The rules for using trailer and bonus tags depend on whether the <code>&lt;itunes:season&gt;</code> and <code>&lt;itunes:episode&gt;</code> tags have values:</p>
+<p><strong>trailer:</strong></p>
+<ul>
+  <li>
+    <p>No season or episode number: a show trailer</p>
+  </li>
+  <li>
+    <p>A season number and no episode number: a season trailer. (<em>Note</em>: an episode trailer should have a different <code>&lt;guid&gt;</code> than the actual episode)</p>
+  </li>
+  <li>
+    <p>Episode number and optionally a season number: an episode trailer/teaser, later replaced with the actual episode</p>
+  </li>
+</ul>
+<p><strong>bonus:</strong></p>
+<ul>
+  <li>
+    <p>No season or episode number: a show bonus</p>
+  </li>
+  <li>
+    <p>A season number: a season bonus</p>
+  </li>
+  <li>
+    <p>Episode number and optionally a season number: a bonus episode related to a specific episode</p>
+  </li>
+</ul>

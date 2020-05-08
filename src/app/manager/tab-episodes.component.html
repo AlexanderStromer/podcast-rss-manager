@@ -1,0 +1,21 @@
+<div style="padding: 20px; width: 500px;">
+  <div class="button-row">
+    <button mat-stroked-button color="primary" (click)="new_clicked()">
+      New Episode
+    </button>
+  </div>
+  <mat-list *ngIf="
+      podcast && podcast.episodes && podcast.episodes.length > 0;
+      else elseBlock
+    ">
+    <mat-list-item *ngFor="let episode of podcast.episodes">
+      <div mat-line>{{ episode.title }}</div>
+      <div mat-line>{{ episode.publicationDate | date }}</div>
+      <mat-icon class="icon" color="primary" (click)="edit(episode)">create</mat-icon>
+      <mat-icon class="icon" color="warn" (click)="remove(episode)" style="margin-left: 10px;">delete_outline</mat-icon>
+    </mat-list-item>
+  </mat-list>
+  <ng-template #elseBlock>
+    <div style="padding: 20px;">No Episodes yet</div>
+  </ng-template>
+</div>

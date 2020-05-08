@@ -1,0 +1,39 @@
+<p>
+  <strong>Apple Podcast - Help</strong
+  ><mat-icon class="link-icon" (click)="openHelp()">link</mat-icon>
+</p>
+<p>The type of show.</p>
+<p>If your show is Serial you must use this tag.</p>
+<p>Its values can be one of the following:</p>
+<ul>
+  <li>
+    <p>
+      <strong>episodic</strong> (default). Specify <em>episodic</em> when
+      episodes are intended to be consumed without any specific order. Apple
+      Podcasts will present newest episodes first and display the publish date
+      (required) of each episode. If organized into
+      <a href="#/itc77382b700" class="xRef Aside" aside="itc77382b700"
+        >seasons</a
+      >, the newest season will be presented first - otherwise, episodes will be
+      grouped by year published, newest first.
+    </p>
+    <p>
+      For new subscribers, Apple&nbsp;Podcasts adds the newest, most recent
+      episode in their Library.
+    </p>
+  </li>
+  <li>
+    <p>
+      <strong>serial</strong>. Specify <em>serial</em> when episodes are
+      intended to be consumed in sequential order. Apple Podcasts will present
+      the oldest episodes first and display the episode numbers (required) of
+      each episode. If organized into seasons, the newest season will be
+      presented first and <code>&lt;itunes:episode&gt;</code> numbers must be
+      given for each episode.
+    </p>
+    <p>
+      For new subscribers, Apple&nbsp;Podcasts adds the first episode to their
+      Library, or the entire current season if using seasons.
+    </p>
+  </li>
+</ul>
