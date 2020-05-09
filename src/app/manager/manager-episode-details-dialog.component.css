@@ -8,6 +8,10 @@
   width: 100%;
 }
 
-.half-width {
-  width: 50%;
+.third-width {
+  width: 25%;
+}
+
+.help-offset {
+  margin-left: 62px;
 }

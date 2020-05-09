@@ -2,6 +2,8 @@ import { Injectable } from "@angular/core";
 import { Podcast } from "../models";
 import { parseString } from "xml2js";
 import { PodcastEpisode } from "../models/podcast-episode.model";
+import { Moment } from "moment";
+import moment from "moment";
 
 declare const require;
 const xml2js = require("xml2js");
@@ -91,7 +93,7 @@ export class FeedSerializerService {
         ? js.enclosure[0].$.type
         : null;
     native.guid = js.guid ? js.guid[0] : null;
-    native.publicationDate = js.pubDate ? js.pubDate[0] : null;
+    native.publicationDate = js.pubDate ? moment(js.pubDate[0]) : null;
     native.description = js.description ? js.description[0] : null;
     native.duration = js["itunes:duration"] ? js["itunes:duration"][0] : null;
     native.episodeSiteUrl = js.link ? js.link[0] : null;
@@ -184,7 +186,7 @@ export class FeedSerializerService {
     };
     if (this.isWriteStringValid(native.guid)) js.guid = { _: native.guid };
     if (this.isWriteDateValid(native.publicationDate))
-      js.pubDate = { _: native.publicationDate };
+      js.pubDate = { _: native.publicationDate.toString() };
     if (this.isWriteStringValid(native.description))
       js.description = { _: native.description };
     if (this.isWriteNumberValid(native.duration))
@@ -215,7 +217,7 @@ export class FeedSerializerService {
     return value && value != "";
   }
 
-  isWriteDateValid(value: Date): boolean {
+  isWriteDateValid(value: Moment): boolean {
     return value ? true : false;
   }
 

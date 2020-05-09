@@ -16,8 +16,8 @@ import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
 import { MatListModule } from "@angular/material/list";
 import { MatButtonModule } from "@angular/material/button";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import {
   ManagerHeaderComponent,
   ManagerTabComponent,
@@ -124,10 +124,11 @@ import { ManagerService } from "./manager/services";
     MatListModule,
     MatButtonModule,
     MatDialogModule,
+    MatMomentDateModule,
     MatDatepickerModule,
-    NgxMaterialTimepickerModule
   ],
   providers: [
+    MatMomentDateModule,
     LanguageService,
     CategoryService,
     FeedSerializerService,

@@ -32,7 +32,13 @@ export class ManagerTabEpisodesComponent implements OnInit, OnDestroy {
     this.dialog.open(ManagerEpisodeDetailsDialogComponent, {
       width: "575px",
     }).afterClosed().subscribe(x => {
-      if (x) console.log(x);
+      if (x) {
+        if (this.podcast.episodes.indexOf(this.managerService.currentPodcastEpisode) >= 0) {
+          this.podcast.episodes[this.podcast.episodes.indexOf(this.managerService.currentPodcastEpisode)] = x;
+        } else {
+          this.podcast.episodes.push(x);
+        }
+      }
     });
   }
 

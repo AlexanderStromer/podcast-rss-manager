@@ -25,8 +25,8 @@ export class ManagerEpisodeDetailsDialogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.managerService.podcastEpisodeFeed.subscribe((x) => (this.podcastEpisode = x));
-    this.podcastEpisode = this.managerService.currentPodcastEpisode;
+    this.managerService.podcastEpisodeFeed.subscribe((x) => (this.podcastEpisode = new PodcastEpisode(x)));
+    this.podcastEpisode = new PodcastEpisode(this.managerService.currentPodcastEpisode);
   }
 
   showHelp(name: string): void {
@@ -71,6 +71,6 @@ export class ManagerEpisodeDetailsDialogComponent implements OnInit {
   }
 
   ok() {
-    this.dialogRef.close('test');
+    this.dialogRef.close(this.podcastEpisode);
   }
 }

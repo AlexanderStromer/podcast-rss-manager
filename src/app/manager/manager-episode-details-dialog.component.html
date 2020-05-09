@@ -2,52 +2,48 @@
   <form class="form" *ngIf="podcastEpisode">
     <mat-form-field class="full-width">
       <mat-label>Title (Searchtext)</mat-label>
-      <input matInput [(value)]="podcastEpisode.title" name="title" required />
+      <input matInput [(ngModel)]="podcastEpisode.title" name="title" required />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('title')">help_outline</mat-icon>
 
     <mat-form-field class="full-width">
       <mat-label>Episode Url</mat-label>
-      <input matInput [(value)]="podcastEpisode.episodeUrl" name="episodeUrl" required />
+      <input matInput [(ngModel)]="podcastEpisode.episodeUrl" name="episodeUrl" required />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('episodeUrl')">help_outline
     </mat-icon>
-    <mat-form-field class="full-width">
+
+    <mat-form-field class="third-width">
       <mat-label>Byte Length</mat-label>
-      <input matInput [(value)]="podcastEpisode.length" name="length" required />
+      <input matInput [(ngModel)]="podcastEpisode.length" name="length" required />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('length')">help_outline</mat-icon>
 
-    <mat-form-field class="full-width">
+    <mat-form-field class="third-width help-offset">
       <mat-label>Duration (seconds)</mat-label>
-      <input matInput [(value)]="podcastEpisode.duration" name="duration" />
+      <input matInput [(ngModel)]="podcastEpisode.duration" name="duration" />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('duration')">help_outline
     </mat-icon>
 
-    <mat-form-field class="half-width">
+    <mat-form-field class="third-width help-offset">
       <mat-label>Publication Date</mat-label>
-      <input matInput [(value)]="podcastEpisode.publicationDate" name="publicationDate" [matDatepicker]="picker" />
+      <input matInput [(ngModel)]="podcastEpisode.publicationDate" name="publicationDate" [matDatepicker]="picker" />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field class="half-width">
-      <mat-label>Time</mat-label>
-      <input matInput [(value)]="podcastEpisode.publicationDate" name="publicationDate" [ngxTimepicker]="default" />
-      <ngx-material-timepicker #default></ngx-material-timepicker>
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('publicationDate')">help_outline
     </mat-icon>
 
     <mat-form-field class="full-width">
       <mat-label>Description</mat-label>
-      <textarea matInput [(value)]="podcastEpisode.description" name="description" rows="5"></textarea>
+      <textarea matInput [(ngModel)]="podcastEpisode.description" name="description" rows="5"></textarea>
     </mat-form-field>
     <mat-icon class="help-icon help-icon-textarea" (click)="showHelp('description')">help_outline</mat-icon>
 
     <mat-form-field class="full-width">
       <mat-label>Episode Site Url</mat-label>
-      <input matInput [(value)]="podcastEpisode.episodeSiteUrl" name="episodeSiteUrl" />
+      <input matInput [(ngModel)]="podcastEpisode.episodeSiteUrl" name="episodeSiteUrl" />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('episodeSiteUrl')">help_outline
     </mat-icon>
@@ -55,40 +51,35 @@
     <div *ngIf="showAllFields">
       <mat-form-field class="full-width">
         <mat-label>Image Url</mat-label>
-        <input matInput [(value)]="podcastEpisode.imageUrl" name="imageUrl" />
+        <input matInput [(ngModel)]="podcastEpisode.imageUrl" name="imageUrl" />
       </mat-form-field>
       <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('imageUrl')">help_outline
       </mat-icon>
 
-      <div class="help-checkboxcontainer">
-        <mat-checkbox [(value)]="podcastEpisode.explicit" name="explicit">Explicit</mat-checkbox>
-      </div>
-      <mat-icon class="help-icon help-icon-checkbox" (click)="showHelp('explicit')">help_outline</mat-icon>
-
       <mat-form-field class="full-width">
         <mat-label>Title (Display)</mat-label>
-        <input matInput [(value)]="podcastEpisode.titleDisplay" name="titleDisplay" />
+        <input matInput [(ngModel)]="podcastEpisode.titleDisplay" name="titleDisplay" />
       </mat-form-field>
       <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('titleDisplay')">help_outline
       </mat-icon>
 
-      <mat-form-field class="full-width">
-        <mat-label>Episode</mat-label>
-        <input matInput [(value)]="podcastEpisode.episode" name="episode" />
-      </mat-form-field>
-      <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('episode')">help_outline
-      </mat-icon>
-
-      <mat-form-field class="full-width">
+      <mat-form-field class="third-width">
         <mat-label>Season</mat-label>
-        <input matInput [(value)]="podcastEpisode.season" name="season" />
+        <input matInput [(ngModel)]="podcastEpisode.season" name="season" />
       </mat-form-field>
       <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('season')">help_outline
       </mat-icon>
 
-      <mat-form-field class="full-width">
+      <mat-form-field class="third-width help-offset">
+        <mat-label>Episode</mat-label>
+        <input matInput [(ngModel)]="podcastEpisode.episode" name="episode" />
+      </mat-form-field>
+      <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('episode')">help_outline
+      </mat-icon>
+
+      <mat-form-field class="third-width help-offset">
         <mat-label>Episode Type</mat-label>
-        <mat-select [(value)]="podcastEpisode.episodeType" name="episodeType">
+        <mat-select [(ngModel)]="podcastEpisode.episodeType" name="episodeType">
           <mat-option value="full">Full</mat-option>
           <mat-option value="trailer">Trailer</mat-option>
           <mat-option value="bonus">Bonus</mat-option>
@@ -96,13 +87,18 @@
       </mat-form-field>
       <mat-icon class="help-icon help-icon-input" (click)="showHelp('episodeType')">help_outline</mat-icon>
 
-      <div class="help-checkboxcontainer">
-        <mat-checkbox [(value)]="podcastEpisode.block" name="block">Block</mat-checkbox>
+      <div class="help-checkboxcontainer third-width">
+        <mat-checkbox [(ngModel)]="podcastEpisode.explicit" name="explicit">Explicit</mat-checkbox>
+      </div>
+      <mat-icon class="help-icon help-icon-checkbox" (click)="showHelp('explicit')">help_outline</mat-icon>
+
+      <div class="help-checkboxcontainer third-width help-offset">
+        <mat-checkbox [(ngModel)]="podcastEpisode.block" name="block">Block</mat-checkbox>
       </div>
       <mat-icon class="help-icon help-icon-checkbox" (click)="showHelp('block')">help_outline</mat-icon>
     </div>
 
-    <div>
+    <div style="padding-top: 20px;">
       <button mat-stroked-button *ngIf="!showAllFields" style="float: left;" (click)="showAllFields = true">Show All Fields</button>
       <button mat-stroked-button style="float: right; margin-left: 10px;" color="primary" (click)="ok()">Ok</button>
       <button mat-stroked-button style="float: right;" color="primary" (click)="cancel()">Cancel</button>

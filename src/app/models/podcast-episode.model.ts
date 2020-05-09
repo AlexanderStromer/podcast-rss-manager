@@ -1,3 +1,5 @@
+import { Moment } from "moment";
+
 export class PodcastEpisode {
   constructor(x?: Partial<PodcastEpisode>) {
     Object.assign(this, x);
@@ -8,7 +10,7 @@ export class PodcastEpisode {
   length: number = null;
   fileType: string = null;
   guid: string = null;
-  publicationDate: Date = null;
+  publicationDate: Moment = null;
   description: string = null;
   duration: number = null;
   imageUrl: string = null;

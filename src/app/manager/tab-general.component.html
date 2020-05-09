@@ -2,62 +2,62 @@
   <form class="form" *ngIf="podcast">
     <mat-form-field class="full-width">
       <mat-label>Title (Searchtext)</mat-label>
-      <input matInput [(value)]="podcast.title" name="title" required />
+      <input matInput [(ngModel)]="podcast.title" name="title" required />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('title')">help_outline</mat-icon>
 
     <mat-form-field class="full-width">
       <mat-label>Description</mat-label>
-      <textarea matInput [(value)]="podcast.description" name="description" required rows="5"></textarea>
+      <textarea matInput [(ngModel)]="podcast.description" name="description" required rows="5"></textarea>
     </mat-form-field>
     <mat-icon class="help-icon help-icon-textarea" (click)="showHelp('description')">help_outline</mat-icon>
 
     <mat-form-field class="full-width">
       <mat-label>Author</mat-label>
-      <input matInput [(value)]="podcast.author" name="author" required />
+      <input matInput [(ngModel)]="podcast.author" name="author" required />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" (click)="showHelp('author')">help_outline</mat-icon>
 
     <mat-form-field class="full-width">
       <mat-label>Website</mat-label>
-      <input matInput [(value)]="podcast.website" name="website" required />
+      <input matInput [(ngModel)]="podcast.website" name="website" required />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('website')">help_outline
     </mat-icon>
 
     <mat-form-field class="full-width">
       <mat-label>Email</mat-label>
-      <input matInput [(value)]="podcast.email" name="email" required />
+      <input matInput [(ngModel)]="podcast.email" name="email" required />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" (click)="showHelp('email')">help_outline</mat-icon>
 
     <mat-form-field class="full-width">
       <mat-label>Language</mat-label>
-      <mat-select [(value)]="podcast.language" name="language" required>
+      <mat-select [(ngModel)]="podcast.language" name="language" required>
         <mat-option *ngFor="let language of languages" [value]="language.code">{{ language.name }}</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" (click)="showHelp('language')">help_outline</mat-icon>
 
-    <div class="help-checkboxcontainer">
-      <mat-checkbox [(value)]="podcast.explicit" name="explicit">Explicit</mat-checkbox>
-    </div>
-    <mat-icon class="help-icon help-icon-checkbox" (click)="showHelp('explicit')">help_outline</mat-icon>
-
     <mat-form-field class="full-width">
       <mat-label>Image Url</mat-label>
-      <input matInput [(value)]="podcast.imageUrl" name="imageUrl" required />
+      <input matInput [(ngModel)]="podcast.imageUrl" name="imageUrl" required />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" (click)="showHelp('imageUrl')">help_outline</mat-icon>
 
     <mat-form-field class="full-width">
       <mat-label>Category</mat-label>
-      <mat-select [(value)]="podcast.category" name="category" required>
+      <mat-select [(ngModel)]="podcast.category" name="category" required>
         <mat-option *ngFor="let category of categories" [value]="category">{{
           category
         }}</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" (click)="showHelp('category')">help_outline</mat-icon>
+
+    <div class="help-checkboxcontainer">
+      <mat-checkbox [(ngModel)]="podcast.explicit" name="explicit">Explicit</mat-checkbox>
+    </div>
+    <mat-icon class="help-icon help-icon-checkbox" (click)="showHelp('explicit')">help_outline</mat-icon>
   </form>
 </div>
