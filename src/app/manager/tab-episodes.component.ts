@@ -29,9 +29,7 @@ export class ManagerTabEpisodesComponent implements OnInit, OnDestroy {
   }
 
   openDialog(): void {
-    this.dialog.open(ManagerEpisodeDetailsDialogComponent, {
-      width: "575px",
-    }).afterClosed().subscribe(x => {
+    this.dialog.open(ManagerEpisodeDetailsDialogComponent, {}).afterClosed().subscribe(x => {
       if (x) {
         if (this.podcast.episodes.indexOf(this.managerService.currentPodcastEpisode) >= 0) {
           this.podcast.episodes[this.podcast.episodes.indexOf(this.managerService.currentPodcastEpisode)] = x;

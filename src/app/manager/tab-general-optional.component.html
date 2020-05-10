@@ -1,13 +1,13 @@
 <div style="padding: 20px;">
-  <form class="example-form" *ngIf="podcast">
-    <mat-form-field class="example-full-width">
+  <form class="standard-form" *ngIf="podcast">
+    <mat-form-field class="standard-width">
       <mat-label>Title (Display)</mat-label>
       <input matInput [(ngModel)]="podcast.titleDisplay" name="titleDisplay" />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('titleDisplay')">help_outline
     </mat-icon>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="standard-width">
       <mat-label>Sub Category</mat-label>
       <mat-select [(ngModel)]="podcast.subCategory" name="subCategory">
         <mat-option *ngFor="let subCategory of subCategories" [value]="subCategory">{{ subCategory }}</mat-option>
@@ -16,7 +16,7 @@
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('subCategory')">help_outline
     </mat-icon>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="standard-width">
       <mat-label>Type</mat-label>
       <mat-select [(ngModel)]="podcast.type" name="type">
         <mat-option value="episodic">Episodic</mat-option>
@@ -25,14 +25,14 @@
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('type')">help_outline</mat-icon>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="standard-width">
       <mat-label>Copyright</mat-label>
       <input matInput [(ngModel)]="podcast.copyright" name="copyright" />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('copyright')">help_outline
     </mat-icon>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="standard-width">
       <mat-label>New Feed Url</mat-label>
       <input matInput [(ngModel)]="podcast.newFeedUrl" name="newFeedUrl" type="url" />
     </mat-form-field>

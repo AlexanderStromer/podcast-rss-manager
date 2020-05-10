@@ -1,13 +1,13 @@
 <div style="width: 500px;">
-  <form class="form" *ngIf="podcastEpisode" #episodeForm="ngForm">
-    <mat-form-field class="full-width">
+  <form class="standard-form" *ngIf="podcastEpisode" #episodeForm="ngForm">
+    <mat-form-field class="standard-width">
       <mat-label>Title (Searchtext)</mat-label>
       <input matInput [(ngModel)]="podcastEpisode.title" name="title" required #title />
       <mat-error *ngIf="!title.filled">required</mat-error>
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('title')">help_outline</mat-icon>
 
-    <mat-form-field class="full-width">
+    <mat-form-field class="standard-width">
       <mat-label>Episode Url</mat-label>
       <input matInput [(ngModel)]="podcastEpisode.episodeUrl" name="episodeUrl" required type="url" #episodeUrl />
       <mat-error *ngIf="!episodeUrl.filled">required</mat-error>
@@ -38,13 +38,13 @@
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('publicationDate')">help_outline
     </mat-icon>
 
-    <mat-form-field class="full-width">
+    <mat-form-field class="standard-width">
       <mat-label>Description</mat-label>
       <textarea matInput [(ngModel)]="podcastEpisode.description" name="description" rows="5"></textarea>
     </mat-form-field>
     <mat-icon class="help-icon help-icon-textarea" (click)="showHelp('description')">help_outline</mat-icon>
 
-    <mat-form-field class="full-width">
+    <mat-form-field class="standard-width">
       <mat-label>Episode Site Url</mat-label>
       <input matInput [(ngModel)]="podcastEpisode.episodeSiteUrl" name="episodeSiteUrl" type="url" />
     </mat-form-field>
@@ -52,14 +52,14 @@
     </mat-icon>
 
     <div *ngIf="showAllFields">
-      <mat-form-field class="full-width">
+      <mat-form-field class="standard-width">
         <mat-label>Image Url</mat-label>
         <input matInput [(ngModel)]="podcastEpisode.imageUrl" name="imageUrl" type="url" />
       </mat-form-field>
       <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('imageUrl')">help_outline
       </mat-icon>
 
-      <mat-form-field class="full-width">
+      <mat-form-field class="standard-width">
         <mat-label>Title (Display)</mat-label>
         <input matInput [(ngModel)]="podcastEpisode.titleDisplay" name="titleDisplay" />
       </mat-form-field>
@@ -101,7 +101,7 @@
       <mat-icon class="help-icon help-icon-checkbox" (click)="showHelp('block')">help_outline</mat-icon>
     </div>
 
-    <div style="padding-top: 20px;">
+    <div style="padding-top: 20px;" class="standard-width">
       <button mat-stroked-button *ngIf="!showAllFields" style="float: left;" (click)="showAllFields = true">Show All Fields</button>
       <button mat-stroked-button style="float: right; margin-left: 10px;" color="primary" (click)="ok()" [disabled]="!episodeForm.form.valid">Ok</button>
       <button mat-stroked-button style="float: right;" color="primary" (click)="cancel()">Cancel</button>

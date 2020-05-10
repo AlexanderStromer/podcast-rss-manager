@@ -16,7 +16,7 @@ import { ManagerService } from "./services";
 @Component({
   selector: "manager-tab-general-optional",
   templateUrl: "tab-general-optional.component.html",
-  styleUrls: ["tab-general-optional.component.css", "design-common.css"]
+  styleUrls: ["design-common.css"]
 })
 export class ManagerTabGeneralOptionalComponent implements OnInit, OnDestroy {
   subCategories: string[];
@@ -26,7 +26,7 @@ export class ManagerTabGeneralOptionalComponent implements OnInit, OnDestroy {
     private _bottomSheet: MatBottomSheet,
     private categoryService: CategoryService,
     private managerService: ManagerService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.managerService.podcastFeed.subscribe(x => {

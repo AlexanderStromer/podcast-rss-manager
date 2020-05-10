@@ -1,7 +1,8 @@
 .help-icon {
-  position: absolute;
+  position: relative;
   cursor: pointer;
   margin-left: 8px;
+  top: 6px;
 }
 
 .help-icon-input {
@@ -18,4 +19,14 @@
 
 .help-checkboxcontainer {
   display: inline-block;
+}
+
+.standard-width {
+  width: 90%;
+}
+
+.standard-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
 }
