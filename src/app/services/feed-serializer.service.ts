@@ -21,6 +21,14 @@ export class FeedSerializerService {
     });
   }
 
+  isValidForSave(podcast: Podcast) {
+    return this.isWriteStringValid(podcast.title) && this.isWriteStringValid(podcast.description)
+      && this.isWriteStringValid(podcast.imageUrl) && this.isWriteStringValid(podcast.language)
+      && this.isWriteStringValid(podcast.category) && this.isWriteStringValid(podcast.author)
+      && this.isWriteStringValid(podcast.website) && this.isWriteStringValid(podcast.email)
+      && podcast.episodes.length > 0;
+  }
+
   saveFeed(podcast: Podcast) {
     return new xml2js.Builder().buildObject(this.translateNativeToJs(podcast));
   }

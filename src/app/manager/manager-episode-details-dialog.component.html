@@ -1,27 +1,30 @@
 <div style="width: 500px;">
-  <form class="form" *ngIf="podcastEpisode">
+  <form class="form" *ngIf="podcastEpisode" #episodeForm="ngForm">
     <mat-form-field class="full-width">
       <mat-label>Title (Searchtext)</mat-label>
-      <input matInput [(ngModel)]="podcastEpisode.title" name="title" required />
+      <input matInput [(ngModel)]="podcastEpisode.title" name="title" required #title />
+      <mat-error *ngIf="!title.filled">required</mat-error>
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('title')">help_outline</mat-icon>
 
     <mat-form-field class="full-width">
       <mat-label>Episode Url</mat-label>
-      <input matInput [(ngModel)]="podcastEpisode.episodeUrl" name="episodeUrl" required />
+      <input matInput [(ngModel)]="podcastEpisode.episodeUrl" name="episodeUrl" required type="url" #episodeUrl />
+      <mat-error *ngIf="!episodeUrl.filled">required</mat-error>
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('episodeUrl')">help_outline
     </mat-icon>
 
     <mat-form-field class="third-width">
       <mat-label>Byte Length</mat-label>
-      <input matInput [(ngModel)]="podcastEpisode.length" name="length" required />
+      <input matInput [(ngModel)]="podcastEpisode.length" name="length" required type="number" min="1" #length />
+      <mat-error *ngIf="!length.filled">required</mat-error>
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('length')">help_outline</mat-icon>
 
     <mat-form-field class="third-width help-offset">
       <mat-label>Duration (seconds)</mat-label>
-      <input matInput [(ngModel)]="podcastEpisode.duration" name="duration" />
+      <input matInput [(ngModel)]="podcastEpisode.duration" name="duration" type="number" min="1" />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('duration')">help_outline
     </mat-icon>
@@ -43,7 +46,7 @@
 
     <mat-form-field class="full-width">
       <mat-label>Episode Site Url</mat-label>
-      <input matInput [(ngModel)]="podcastEpisode.episodeSiteUrl" name="episodeSiteUrl" />
+      <input matInput [(ngModel)]="podcastEpisode.episodeSiteUrl" name="episodeSiteUrl" type="url" />
     </mat-form-field>
     <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('episodeSiteUrl')">help_outline
     </mat-icon>
@@ -51,7 +54,7 @@
     <div *ngIf="showAllFields">
       <mat-form-field class="full-width">
         <mat-label>Image Url</mat-label>
-        <input matInput [(ngModel)]="podcastEpisode.imageUrl" name="imageUrl" />
+        <input matInput [(ngModel)]="podcastEpisode.imageUrl" name="imageUrl" type="url" />
       </mat-form-field>
       <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('imageUrl')">help_outline
       </mat-icon>
@@ -65,14 +68,14 @@
 
       <mat-form-field class="third-width">
         <mat-label>Season</mat-label>
-        <input matInput [(ngModel)]="podcastEpisode.season" name="season" />
+        <input matInput [(ngModel)]="podcastEpisode.season" name="season" type="number" min="1" />
       </mat-form-field>
       <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('season')">help_outline
       </mat-icon>
 
       <mat-form-field class="third-width help-offset">
         <mat-label>Episode</mat-label>
-        <input matInput [(ngModel)]="podcastEpisode.episode" name="episode" />
+        <input matInput [(ngModel)]="podcastEpisode.episode" name="episode" type="number" min="1" />
       </mat-form-field>
       <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('episode')">help_outline
       </mat-icon>
@@ -100,7 +103,7 @@
 
     <div style="padding-top: 20px;">
       <button mat-stroked-button *ngIf="!showAllFields" style="float: left;" (click)="showAllFields = true">Show All Fields</button>
-      <button mat-stroked-button style="float: right; margin-left: 10px;" color="primary" (click)="ok()">Ok</button>
+      <button mat-stroked-button style="float: right; margin-left: 10px;" color="primary" (click)="ok()" [disabled]="!episodeForm.form.valid">Ok</button>
       <button mat-stroked-button style="float: right;" color="primary" (click)="cancel()">Cancel</button>
     </div>
   </form>

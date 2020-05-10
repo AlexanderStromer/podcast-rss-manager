@@ -22,4 +22,8 @@ export class Podcast {
   block: boolean = null;
   complete: boolean = null;
   episodes: PodcastEpisode[] = [];
+
+  sortEpisodesDescending() {
+    this.episodes = this.episodes.sort((a, b) => a.publicationDate > b.publicationDate ? -1 : a.publicationDate < b.publicationDate ? 1 : 0)
+  }
 }

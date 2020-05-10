@@ -18,6 +18,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {
   ManagerHeaderComponent,
   ManagerTabComponent,
@@ -126,6 +127,7 @@ import { ManagerService } from "./manager/services";
     MatDialogModule,
     MatMomentDateModule,
     MatDatepickerModule,
+    MatSnackBarModule
   ],
   providers: [
     MatMomentDateModule,

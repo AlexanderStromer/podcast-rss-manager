@@ -38,6 +38,7 @@ export class ManagerTabEpisodesComponent implements OnInit, OnDestroy {
         } else {
           this.podcast.episodes.push(x);
         }
+        this.podcast.sortEpisodesDescending();
       }
     });
   }
