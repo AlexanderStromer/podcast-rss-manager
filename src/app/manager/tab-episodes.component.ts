@@ -3,6 +3,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { Podcast, PodcastEpisode } from "../models";
 import { ManagerService } from "./services";
 import { ManagerEpisodeDetailsDialogComponent } from "./manager-episode-details-dialog.component";
+import { UUID } from 'angular2-uuid';
 
 @Component({
   selector: "manager-tab-episodes",
@@ -29,11 +30,13 @@ export class ManagerTabEpisodesComponent implements OnInit, OnDestroy {
   }
 
   openDialog(): void {
-    this.dialog.open(ManagerEpisodeDetailsDialogComponent, {}).afterClosed().subscribe(x => {
+    this.dialog.open<ManagerEpisodeDetailsDialogComponent, any, PodcastEpisode>(ManagerEpisodeDetailsDialogComponent, {}).afterClosed().subscribe(x => {
       if (x) {
         if (this.podcast.episodes.indexOf(this.managerService.currentPodcastEpisode) >= 0) {
           this.podcast.episodes[this.podcast.episodes.indexOf(this.managerService.currentPodcastEpisode)] = x;
         } else {
+          x.fileType = 'audio/mpeg';
+          x.guid = UUID.UUID().toUpperCase();
           this.podcast.episodes.push(x);
         }
         this.podcast.sortEpisodesDescending();
