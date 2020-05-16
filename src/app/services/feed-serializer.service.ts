@@ -194,7 +194,7 @@ export class FeedSerializerService {
     };
     if (this.isWriteStringValid(native.guid)) js.guid = { _: native.guid };
     if (this.isWriteDateValid(native.publicationDate))
-      js.pubDate = { _: native.publicationDate.toString() };
+      js.pubDate = { _: native.publicationDate.toISOString() };
     if (this.isWriteStringValid(native.description))
       js.description = { _: native.description };
     if (this.isWriteNumberValid(native.duration))
