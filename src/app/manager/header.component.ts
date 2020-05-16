@@ -53,4 +53,8 @@ export class ManagerHeaderComponent implements OnInit {
         );
     }
   }
+
+  project_link() {
+    window.open('https://github.com/AlexanderStromer/podcast-rss-manager', '_blank');
+  }
 }
