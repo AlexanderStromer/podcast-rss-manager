@@ -7,7 +7,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 @Component({
   selector: "manager-header",
   templateUrl: "header.component.html",
-  styleUrls: ["header.component.css"]
+  styleUrls: ["header.component.scss"]
 })
 export class ManagerHeaderComponent implements OnInit {
   private defaultPodcast: Podcast = new Podcast({ language: "en" });

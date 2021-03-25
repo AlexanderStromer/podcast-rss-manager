@@ -8,7 +8,7 @@ import { ManagerService } from "../services";
 @Component({
   selector: "manager-tab-general-optional",
   templateUrl: "tab-general-optional.component.html",
-  styleUrls: ["../design-common.css"]
+  styleUrls: ["../design-common.scss"]
 })
 export class ManagerTabGeneralOptionalComponent implements OnInit, OnDestroy {
   subCategories: string[];

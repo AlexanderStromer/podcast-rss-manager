@@ -8,7 +8,7 @@ import { ManagerService } from "../services";
 @Component({
   selector: "manager-tab-general",
   templateUrl: "tab-general.component.html",
-  styleUrls: ["../design-common.css"]
+  styleUrls: ["../design-common.scss"]
 })
 export class ManagerTabGeneralComponent implements OnInit, OnDestroy {
   languages: Language[];

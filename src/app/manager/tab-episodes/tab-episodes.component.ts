@@ -8,7 +8,7 @@ import { UUID } from 'angular2-uuid';
 @Component({
   selector: "manager-tab-episodes",
   templateUrl: "tab-episodes.component.html",
-  styleUrls: ["tab-episodes.component.css", "../design-common.css"],
+  styleUrls: ["tab-episodes.component.scss", "../design-common.scss"],
 })
 export class ManagerTabEpisodesComponent implements OnInit, OnDestroy {
   podcast: Podcast;

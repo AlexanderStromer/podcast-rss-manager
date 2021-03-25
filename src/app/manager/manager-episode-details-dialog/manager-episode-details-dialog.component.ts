@@ -13,7 +13,7 @@ import { MatDialogRef } from "@angular/material/dialog";
 @Component({
   selector: "manager-episode-details-dialog",
   templateUrl: "manager-episode-details-dialog.component.html",
-  styleUrls: ["manager-episode-details-dialog.component.css", "../design-common.css"],
+  styleUrls: ["manager-episode-details-dialog.component.scss", "../design-common.scss"],
 })
 export class ManagerEpisodeDetailsDialogComponent implements OnInit {
   podcastEpisode: PodcastEpisode;
