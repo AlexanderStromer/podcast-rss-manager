@@ -2,17 +2,18 @@ import { Component, OnInit } from "@angular/core";
 import { MatBottomSheet } from "@angular/material/bottom-sheet";
 import {
   EpisodeTitleHelpSheet, EpisodeEpisodeUrlHelpSheet, EpisodeLengthHelpSheet, EpisodeDurationHelpSheet,
-  EpisodePublicationDateHelpSheet, EpisodeDescriptionHelpSheet, EpisodeEpisodeSiteUrlHelpSheet, EpisodeImageUrlHelpSheet, EpisodeExplicitHelpSheet, EpisodeTitleDisplayHelpSheet,
+  EpisodePublicationDateHelpSheet, EpisodeDescriptionHelpSheet, EpisodeEpisodeSiteUrlHelpSheet,
+  EpisodeImageUrlHelpSheet, EpisodeExplicitHelpSheet, EpisodeTitleDisplayHelpSheet,
   EpisodeEpisodeHelpSheet, EpisodeSeasonHelpSheet, EpisodeEpisodeTypeHelpSheet, EpisodeBlockHelpSheet
-} from "./help";
-import { ManagerService } from "./services";
-import { PodcastEpisode } from "../models";
+} from "../help";
+import { ManagerService } from "../services";
+import { PodcastEpisode } from "../../models";
 import { MatDialogRef } from "@angular/material/dialog";
 
 @Component({
   selector: "manager-episode-details-dialog",
   templateUrl: "manager-episode-details-dialog.component.html",
-  styleUrls: ["manager-episode-details-dialog.component.css", "./design-common.css"],
+  styleUrls: ["manager-episode-details-dialog.component.css", "../design-common.css"],
 })
 export class ManagerEpisodeDetailsDialogComponent implements OnInit {
   podcastEpisode: PodcastEpisode;

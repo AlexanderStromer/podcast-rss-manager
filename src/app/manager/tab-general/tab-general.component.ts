@@ -1,28 +1,14 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { MatBottomSheet } from "@angular/material/bottom-sheet";
-import {
-  TitleHelpSheet,
-  DescriptionHelpSheet,
-  AuthorHelpSheet,
-  WebsiteHelpSheet,
-  EmailHelpSheet,
-  LanguageHelpSheet,
-  ExplicitHelpSheet,
-  ImageUrlHelpSheet,
-  CategoryHelpSheet
-} from "./help";
-import {
-  LanguageService,
-  Language,
-  CategoryService
-} from "../services";
-import { Podcast } from "../models";
-import { ManagerService } from "./services";
+import { TitleHelpSheet, DescriptionHelpSheet, AuthorHelpSheet, WebsiteHelpSheet, EmailHelpSheet, LanguageHelpSheet, ExplicitHelpSheet, ImageUrlHelpSheet, CategoryHelpSheet } from "../help";
+import { LanguageService, Language, CategoryService } from "../../services";
+import { Podcast } from "../../models";
+import { ManagerService } from "../services";
 
 @Component({
   selector: "manager-tab-general",
   templateUrl: "tab-general.component.html",
-  styleUrls: ["design-common.css"]
+  styleUrls: ["../design-common.css"]
 })
 export class ManagerTabGeneralComponent implements OnInit, OnDestroy {
   languages: Language[];

@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef, OnInit } from "@angular/core";
-import { FeedSerializerService, FileManagementService } from "../services";
-import { Podcast } from "../models";
-import { ManagerService } from "./services";
+import { FeedSerializerService, FileManagementService } from "../../services";
+import { Podcast } from "../../models";
+import { ManagerService } from "../services";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({

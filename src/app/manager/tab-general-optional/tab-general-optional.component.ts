@@ -1,22 +1,14 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { CategoryService } from "../services";
-import { Podcast } from "../models";
+import { CategoryService } from "../../services";
+import { Podcast } from "../../models";
 import { MatBottomSheet } from "@angular/material/bottom-sheet";
-import {
-  TitleDisplayHelpSheet,
-  SubCategoryHelpSheet,
-  TypeHelpSheet,
-  CopyrightHelpSheet,
-  NewFeedUrlHelpSheet,
-  BlockHelpSheet,
-  CompleteHelpSheet
-} from "./help";
-import { ManagerService } from "./services";
+import { TitleDisplayHelpSheet, SubCategoryHelpSheet, TypeHelpSheet, CopyrightHelpSheet, NewFeedUrlHelpSheet, BlockHelpSheet, CompleteHelpSheet } from "../help";
+import { ManagerService } from "../services";
 
 @Component({
   selector: "manager-tab-general-optional",
   templateUrl: "tab-general-optional.component.html",
-  styleUrls: ["design-common.css"]
+  styleUrls: ["../design-common.css"]
 })
 export class ManagerTabGeneralOptionalComponent implements OnInit, OnDestroy {
   subCategories: string[];

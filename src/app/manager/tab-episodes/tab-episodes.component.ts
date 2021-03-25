@@ -1,14 +1,14 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
-import { Podcast, PodcastEpisode } from "../models";
-import { ManagerService } from "./services";
-import { ManagerEpisodeDetailsDialogComponent } from "./manager-episode-details-dialog.component";
+import { Podcast, PodcastEpisode } from "../../models";
+import { ManagerService } from "../services";
+import { ManagerEpisodeDetailsDialogComponent } from "../manager-episode-details-dialog/manager-episode-details-dialog.component";
 import { UUID } from 'angular2-uuid';
 
 @Component({
   selector: "manager-tab-episodes",
   templateUrl: "tab-episodes.component.html",
-  styleUrls: ["tab-episodes.component.css", "design-common.css"],
+  styleUrls: ["tab-episodes.component.css", "../design-common.css"],
 })
 export class ManagerTabEpisodesComponent implements OnInit, OnDestroy {
   podcast: Podcast;
