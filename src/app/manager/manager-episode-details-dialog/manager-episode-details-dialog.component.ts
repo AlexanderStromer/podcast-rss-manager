@@ -7,7 +7,7 @@ import {
   EpisodeEpisodeHelpSheet, EpisodeSeasonHelpSheet, EpisodeEpisodeTypeHelpSheet, EpisodeBlockHelpSheet
 } from "../help";
 import { ManagerService } from "../services";
-import { PodcastEpisode } from "../../models";
+import { PodcastEpisode } from "podcast-feed-serializer";
 import { MatDialogRef } from "@angular/material/dialog";
 
 @Component({

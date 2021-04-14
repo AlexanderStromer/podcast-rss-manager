@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef, OnInit } from "@angular/core";
-import { FeedSerializerService, FileManagementService } from "../../services";
-import { Podcast } from "../../models";
+import { FileManagementService } from "../../services";
+import { Podcast, FeedSerializer } from "podcast-feed-serializer";
 import { ManagerService } from "../services";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
@@ -14,7 +14,6 @@ export class ManagerHeaderComponent implements OnInit {
   @ViewChild("file") file: ElementRef;
 
   constructor(
-    private feedSerializerService: FeedSerializerService,
     private fileManagementService: FileManagementService,
     private managerService: ManagerService,
     private snackBar: MatSnackBar
@@ -29,10 +28,10 @@ export class ManagerHeaderComponent implements OnInit {
   }
 
   downloadFile_click() {
-    if (this.feedSerializerService.isValidForSave(this.managerService.currentPodcast)) {
+    if (new FeedSerializer().isValidForSave(this.managerService.currentPodcast)) {
       this.managerService.currentPodcast.sortEpisodesDescending();
       this.fileManagementService.saveFile(
-        this.feedSerializerService.saveFeed(this.managerService.currentPodcast)
+        new FeedSerializer().saveFeed(this.managerService.currentPodcast)
       );
     } else {
       this.snackBar.open("A valid podcast requires all fields in the General tab and at least 1 episode.", 'Close');
@@ -44,7 +43,7 @@ export class ManagerHeaderComponent implements OnInit {
       this.fileManagementService
         .readFile(this.file.nativeElement.files[0])
         .then(x =>
-          this.feedSerializerService
+          new FeedSerializer()
             .loadFeed(x)
             .then(y => {
               y.sortEpisodesDescending();

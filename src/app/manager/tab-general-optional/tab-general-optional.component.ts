@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { CategoryService } from "../../services";
-import { Podcast } from "../../models";
+import { Podcast } from "podcast-feed-serializer";
 import { MatBottomSheet } from "@angular/material/bottom-sheet";
 import { TitleDisplayHelpSheet, SubCategoryHelpSheet, TypeHelpSheet, CopyrightHelpSheet, NewFeedUrlHelpSheet, BlockHelpSheet, CompleteHelpSheet } from "../help";
 import { ManagerService } from "../services";

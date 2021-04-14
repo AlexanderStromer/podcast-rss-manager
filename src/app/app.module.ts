@@ -62,7 +62,6 @@ import {
 import {
   LanguageService,
   CategoryService,
-  FeedSerializerService,
   FileManagementService
 } from "./services";
 import { FormsModule } from "@angular/forms";
@@ -133,7 +132,6 @@ import { ManagerService } from "./manager/services";
     MatMomentDateModule,
     LanguageService,
     CategoryService,
-    FeedSerializerService,
     FileManagementService,
     ManagerService
   ],

@@ -1,7 +1,6 @@
 import { Injectable, OnDestroy } from "@angular/core";
-import { Podcast } from "../../models";
+import { Podcast, PodcastEpisode } from "podcast-feed-serializer";
 import { Subject } from "rxjs";
-import { PodcastEpisode } from "../../models/podcast-episode.model";
 
 @Injectable()
 export class ManagerService implements OnDestroy {

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { MatBottomSheet } from "@angular/material/bottom-sheet";
 import { TitleHelpSheet, DescriptionHelpSheet, AuthorHelpSheet, WebsiteHelpSheet, EmailHelpSheet, LanguageHelpSheet, ExplicitHelpSheet, ImageUrlHelpSheet, CategoryHelpSheet } from "../help";
 import { LanguageService, Language, CategoryService } from "../../services";
-import { Podcast } from "../../models";
+import { Podcast } from "podcast-feed-serializer";
 import { ManagerService } from "../services";
 
 @Component({
