@@ -26,7 +26,7 @@
     "angular2-uuid": "^1.1.1",
     "file-saver": "^2.0.2",
     "iso-639": "^0.2.2",
-    "moment": "^2.25.3",
+    "moment": "^2.29.2",
     "podcast-categories": "^2.0.0",
     "podcast-feed-serializer": "^1.0.3",
     "rxjs": "~6.6.6",
