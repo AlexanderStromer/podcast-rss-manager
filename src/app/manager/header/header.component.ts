@@ -2,7 +2,7 @@ import { Component, ViewChild, ElementRef, OnInit } from "@angular/core";
 import { FileManagementService } from "../../services";
 import { Podcast, FeedSerializer } from "podcast-feed-serializer";
 import { ManagerService } from "../services";
-import { MatLegacySnackBar as MatSnackBar } from "@angular/material/legacy-snack-bar";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "manager-header",
