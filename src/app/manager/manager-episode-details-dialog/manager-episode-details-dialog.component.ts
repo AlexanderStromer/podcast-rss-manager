@@ -8,7 +8,7 @@ import {
 } from "../help";
 import { ManagerService } from "../services";
 import { PodcastEpisode } from "podcast-feed-serializer";
-import { MatDialogRef } from "@angular/material/dialog";
+import { MatLegacyDialogRef as MatDialogRef } from "@angular/material/legacy-dialog";
 
 @Component({
   selector: "manager-episode-details-dialog",

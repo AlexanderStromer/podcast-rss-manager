@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
+import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
 import { Podcast, PodcastEpisode } from "podcast-feed-serializer";
 import { ManagerService } from "../services";
 import { ManagerEpisodeDetailsDialogComponent } from "../manager-episode-details-dialog/manager-episode-details-dialog.component";
