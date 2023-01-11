@@ -8,11 +8,17 @@
       podcast && podcast.episodes && podcast.episodes.length > 0;
       else elseBlock
     ">
-    <mat-list-item *ngFor="let episode of podcast.episodes">
-      <div mat-line>{{ episode.title }}</div>
-      <div mat-line>{{ episode.publicationDate | date }}</div>
-      <mat-icon class="icon" color="primary" (click)="edit(episode)">create</mat-icon>
-      <mat-icon class="icon" color="warn" (click)="remove(episode)" style="margin-left: 10px;">delete_outline</mat-icon>
+    <mat-list-item *ngFor="let episode of podcast.episodes" style="height: 60px;">
+      <div style="display: flex; align-items: center;">
+        <div style="display: flex; flex-direction: column; flex: 1;">
+          <div mat-line>{{ episode.title }}</div>
+          <div mat-line>{{ episode.publicationDate | date }}</div>
+        </div>
+        <div style="display: flex;">
+          <mat-icon class="icon" color="primary" (click)="edit(episode)">create</mat-icon>
+          <mat-icon class="icon" color="warn" (click)="remove(episode)" style="margin-left: 10px;">delete_outline</mat-icon>
+        </div>
+      </div>
     </mat-list-item>
   </mat-list>
   <ng-template #elseBlock>
