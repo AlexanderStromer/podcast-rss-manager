@@ -68,19 +68,19 @@
 				},
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
-					"options": {
-						"browserTarget": "podcast-rss-manager:build"
+          "options": {
+            "buildTarget": "podcast-rss-manager:build"
 					},
 					"configurations": {
-						"production": {
-							"browserTarget": "podcast-rss-manager:build:production"
+            "production": {
+              "buildTarget": "podcast-rss-manager:build:production"
 						}
 					}
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
-					"options": {
-						"browserTarget": "podcast-rss-manager:build"
+          "options": {
+            "buildTarget": "podcast-rss-manager:build"
 					}
 				},
 				"test": {
