@@ -28,12 +28,12 @@
     "iso-639": "^0.2.2",
     "moment": "^2.30.1",
     "podcast-categories": "^2.0.0",
-    "podcast-feed-serializer": "^1.0.3",
+    "podcast-feed-serializer": "^1.0.4",
     "rxjs": "^7.8.0",
     "stream": "0.0.2",
     "timers": "^0.1.1",
     "tslib": "^2.0.0",
-    "xml2js": "^0.5.0",
+    "xml2js": "^0.6.2",
     "zone.js": "^0.14.10"
   },
   "devDependencies": {
