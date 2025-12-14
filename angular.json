@@ -15,16 +15,16 @@
 			"prefix": "app",
 			"architect": {
 				"build": {
-					"builder": "@angular-devkit/build-angular:browser",
+					"builder": "@angular-devkit/build-angular:application",
 					"options": {
-						"outputPath": "dist/podcast-rss-manager",
-						"index": "src/index.html",
-						"main": "src/main.ts",
+						"outputPath": {
+              "base": "dist/podcast-rss-manager"
+            },
+            "index": "src/index.html",
 						"polyfills": ["zone.js"],
 						"tsConfig": "tsconfig.app.json",
 						"aot": false,
-						"optimization": false,
-						"buildOptimizer": false,
+            "optimization": false,
 						"assets": [
 							"src/favicon.ico",
 							"src/assets"
@@ -33,7 +33,8 @@
 							"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
 							"src/styles.scss"
 						],
-						"scripts": []
+            "scripts": [],
+            "browser": "src/main.ts"
 					},
 					"configurations": {
 						"production": {
@@ -47,9 +48,7 @@
 							"outputHashing": "all",
 							"sourceMap": false,
 							"namedChunks": false,
-							"extractLicenses": true,
-							"vendorChunk": false,
-							"buildOptimizer": false,
+              "extractLicenses": true,
 							"aot": true,
 							"budgets": [
 								{

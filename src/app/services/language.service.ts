@@ -1,20 +1,14 @@
 import { Injectable } from "@angular/core";
-
-declare const require;
-const iso_639_1 = require("iso-639/data/iso_639-1.json");
+import ISO6391 from 'iso-639-1';
 
 @Injectable()
 export class LanguageService {
-  constructor() {}
+  constructor() { }
 
   get(): Language[] {
-    let x: Language[] = [];
-    for (let languageIndex in iso_639_1) {
-      x.push(
-        new Language({ code: iso_639_1[languageIndex]["639-1"], name: iso_639_1[languageIndex]["name"] })
-      );
-    }
-    return x;
+    return ISO6391.getAllCodes().map(code =>
+      new Language({ code, name: ISO6391.getName(code) })
+    );
   }
 }
 

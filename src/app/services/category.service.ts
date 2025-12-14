@@ -1,25 +1,19 @@
 import { Injectable } from "@angular/core";
+import categories from "podcast-categories";
 
-declare const require;
-const categories = require("podcast-categories/index");
+type PodcastCategories = Record<string, Record<string, boolean>>;
 
 @Injectable()
 export class CategoryService {
+  private readonly categories: PodcastCategories = categories as PodcastCategories;
+
   constructor() {}
 
   getMainCategories(): string[] {
-    let x: string[] = [];
-    for (let category in categories) {
-      x.push(category);
-    }
-    return x;
+    return Object.keys(this.categories);
   }
 
   getSubCategories(mainCategory: string): string[] {
-    let x: string[] = [];
-    for (let subCategory in categories[mainCategory]) {
-      x.push(subCategory);
-    }
-    return x;
+    return Object.keys(this.categories[mainCategory] || {});
   }
 }
