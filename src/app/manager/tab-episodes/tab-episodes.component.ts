@@ -6,9 +6,10 @@ import { ManagerEpisodeDetailsDialogComponent } from "../manager-episode-details
 import { UUID } from 'angular2-uuid';
 
 @Component({
-  selector: "manager-tab-episodes",
-  templateUrl: "tab-episodes.component.html",
-  styleUrls: ["tab-episodes.component.scss", "../design-common.scss"],
+    selector: "manager-tab-episodes",
+    templateUrl: "tab-episodes.component.html",
+    styleUrls: ["tab-episodes.component.scss", "../design-common.scss"],
+    standalone: false
 })
 export class ManagerTabEpisodesComponent implements OnInit, OnDestroy {
   podcast: Podcast;

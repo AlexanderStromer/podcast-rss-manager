@@ -1,57 +1,56 @@
 <div style="padding: 20px;">
-  <form class="standard-form" *ngIf="podcast">
-    <mat-form-field class="standard-width">
-      <mat-label>Title (Display)</mat-label>
-      <input matInput [(ngModel)]="podcast.titleDisplay" name="titleDisplay" />
-    </mat-form-field>
-    <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('titleDisplay')">help_outline
-    </mat-icon>
-
-    <mat-form-field class="standard-width">
-      <mat-label>Sub Category</mat-label>
-      <mat-select [(ngModel)]="podcast.subCategory" name="subCategory">
-        <mat-option *ngFor="let subCategory of subCategories" [value]="subCategory">{{ subCategory }}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('subCategory')">help_outline
-    </mat-icon>
-
-    <mat-form-field class="standard-width">
-      <mat-label>Type</mat-label>
-      <mat-select [(ngModel)]="podcast.type" name="type">
-        <mat-option value="episodic">Episodic</mat-option>
-        <mat-option value="serial">Serial</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('type')">help_outline</mat-icon>
-
-    <mat-form-field class="standard-width">
-      <mat-label>Copyright</mat-label>
-      <input matInput [(ngModel)]="podcast.copyright" name="copyright" />
-    </mat-form-field>
-    <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('copyright')">help_outline
-    </mat-icon>
-
-    <mat-form-field class="standard-width">
-      <mat-label>New Feed Url</mat-label>
-      <input matInput [(ngModel)]="podcast.newFeedUrl" name="newFeedUrl" type="url" />
-    </mat-form-field>
-    <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('newFeedUrl')">help_outline
-    </mat-icon>
-
-    <div>
-      <div class="help-checkboxcontainer">
-        <mat-checkbox [(ngModel)]="podcast.block" name="block" style="display: block;">Block</mat-checkbox>
-      </div>
-      <mat-icon class="help-icon help-icon-checkbox" aria-hidden="false" (click)="showHelp('block')">help_outline
+  @if (podcast) {
+    <form class="standard-form">
+      <mat-form-field class="standard-width">
+        <mat-label>Title (Display)</mat-label>
+        <input matInput [(ngModel)]="podcast.titleDisplay" name="titleDisplay" />
+      </mat-form-field>
+      <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('titleDisplay')">help_outline
       </mat-icon>
-    </div>
-    <div>
-      <div class="help-checkboxcontainer">
-        <mat-checkbox [(ngModel)]="podcast.complete" name="complete">Complete</mat-checkbox>
-      </div>
-      <mat-icon class="help-icon help-icon-checkbox" aria-hidden="false" (click)="showHelp('complete')">help_outline
+      <mat-form-field class="standard-width">
+        <mat-label>Sub Category</mat-label>
+        <mat-select [(ngModel)]="podcast.subCategory" name="subCategory">
+          @for (subCategory of subCategories; track subCategory) {
+            <mat-option [value]="subCategory">{{ subCategory }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('subCategory')">help_outline
       </mat-icon>
-    </div>
-  </form>
+      <mat-form-field class="standard-width">
+        <mat-label>Type</mat-label>
+        <mat-select [(ngModel)]="podcast.type" name="type">
+          <mat-option value="episodic">Episodic</mat-option>
+          <mat-option value="serial">Serial</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('type')">help_outline</mat-icon>
+      <mat-form-field class="standard-width">
+        <mat-label>Copyright</mat-label>
+        <input matInput [(ngModel)]="podcast.copyright" name="copyright" />
+      </mat-form-field>
+      <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('copyright')">help_outline
+      </mat-icon>
+      <mat-form-field class="standard-width">
+        <mat-label>New Feed Url</mat-label>
+        <input matInput [(ngModel)]="podcast.newFeedUrl" name="newFeedUrl" type="url" />
+      </mat-form-field>
+      <mat-icon class="help-icon help-icon-input" aria-hidden="false" (click)="showHelp('newFeedUrl')">help_outline
+      </mat-icon>
+      <div>
+        <div class="help-checkboxcontainer">
+          <mat-checkbox [(ngModel)]="podcast.block" name="block" style="display: block;">Block</mat-checkbox>
+        </div>
+        <mat-icon class="help-icon help-icon-checkbox" aria-hidden="false" (click)="showHelp('block')">help_outline
+        </mat-icon>
+      </div>
+      <div>
+        <div class="help-checkboxcontainer">
+          <mat-checkbox [(ngModel)]="podcast.complete" name="complete">Complete</mat-checkbox>
+        </div>
+        <mat-icon class="help-icon help-icon-checkbox" aria-hidden="false" (click)="showHelp('complete')">help_outline
+        </mat-icon>
+      </div>
+    </form>
+  }
 </div>

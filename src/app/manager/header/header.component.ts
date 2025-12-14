@@ -5,9 +5,10 @@ import { ManagerService } from "../services";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
-  selector: "manager-header",
-  templateUrl: "header.component.html",
-  styleUrls: ["header.component.scss"]
+    selector: "manager-header",
+    templateUrl: "header.component.html",
+    styleUrls: ["header.component.scss"],
+    standalone: false
 })
 export class ManagerHeaderComponent implements OnInit {
   private defaultPodcast: Podcast = new Podcast({ language: "en" });

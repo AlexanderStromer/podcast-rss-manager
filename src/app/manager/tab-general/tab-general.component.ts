@@ -6,9 +6,10 @@ import { Podcast } from "podcast-feed-serializer";
 import { ManagerService } from "../services";
 
 @Component({
-  selector: "manager-tab-general",
-  templateUrl: "tab-general.component.html",
-  styleUrls: ["../design-common.scss"]
+    selector: "manager-tab-general",
+    templateUrl: "tab-general.component.html",
+    styleUrls: ["../design-common.scss"],
+    standalone: false
 })
 export class ManagerTabGeneralComponent implements OnInit, OnDestroy {
   languages: Language[];

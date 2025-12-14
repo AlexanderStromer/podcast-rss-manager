@@ -6,9 +6,10 @@ import { TitleDisplayHelpSheet, SubCategoryHelpSheet, TypeHelpSheet, CopyrightHe
 import { ManagerService } from "../services";
 
 @Component({
-  selector: "manager-tab-general-optional",
-  templateUrl: "tab-general-optional.component.html",
-  styleUrls: ["../design-common.scss"]
+    selector: "manager-tab-general-optional",
+    templateUrl: "tab-general-optional.component.html",
+    styleUrls: ["../design-common.scss"],
+    standalone: false
 })
 export class ManagerTabGeneralOptionalComponent implements OnInit, OnDestroy {
   subCategories: string[];
