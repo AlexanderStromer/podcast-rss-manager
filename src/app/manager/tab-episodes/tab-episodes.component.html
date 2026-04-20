@@ -12,7 +12,7 @@
           <div style="display: flex; align-items: center;">
             <div style="display: flex; flex-direction: column; flex: 1;">
               <div mat-line>{{ episode.title }}</div>
-              <div mat-line>{{ episode.publicationDate | date }}</div>
+              <div mat-line>{{ episode.publicationDate.toDate() | date }}</div>
             </div>
             <div style="display: flex;">
               <mat-icon class="icon" color="primary" (click)="edit(episode)">create</mat-icon>
