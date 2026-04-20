@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [24.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -25,7 +25,7 @@ jobs:
       run: npm ci
 
     - name: Build Angular app
-      run: npm run build -- --configuration production
+      run: npm run buildprod
 
     - name: Commit and push changes
       run: |
