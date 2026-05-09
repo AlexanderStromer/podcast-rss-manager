@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Build production
-        run: ng build --configuration production --base-href /podcast-rss-manager/
+        run: npx ng build --configuration production --base-href /podcast-rss-manager/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
