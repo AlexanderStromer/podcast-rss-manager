@@ -17,6 +17,6 @@ export class Language {
     Object.assign(this, x);
   }
 
-  code: string;
-  name: string;
+  code!: string;
+  name!: string;
 }

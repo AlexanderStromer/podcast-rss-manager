@@ -10,7 +10,7 @@ export class FileManagementService {
       var reader = new FileReader();
 
       reader.onload = function(e: any) {
-        x(reader.result.toString());
+        x(reader.result! as string);
       };
 
       reader.readAsText(file);

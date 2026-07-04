@@ -1,4 +1,5 @@
 export {
+  HelpSheet,
   TitleHelpSheet,
   DescriptionHelpSheet,
   AuthorHelpSheet,

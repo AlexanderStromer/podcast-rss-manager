@@ -1,4 +1,6 @@
 import { Injectable } from "@angular/core";
+// podcast-categories ships CommonJS JavaScript without TypeScript declarations.
+// @ts-expect-error TS7016
 import categories from "podcast-categories";
 
 type PodcastCategories = Record<string, Record<string, boolean>>;

@@ -1,19 +1,21 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from "@angular/core";
 import { CategoryService } from "../../services";
 import { Podcast } from "podcast-feed-serializer";
 import { MatBottomSheet } from "@angular/material/bottom-sheet";
-import { TitleDisplayHelpSheet, SubCategoryHelpSheet, TypeHelpSheet, CopyrightHelpSheet, NewFeedUrlHelpSheet, BlockHelpSheet, CompleteHelpSheet } from "../help";
+import { TitleDisplayHelpSheet, SubCategoryHelpSheet, TypeHelpSheet, CopyrightHelpSheet, NewFeedUrlHelpSheet, BlockHelpSheet, CompleteHelpSheet, HelpSheet } from "../help";
 import { ManagerService } from "../services";
+import { ComponentType } from "@angular/cdk/portal";
 
 @Component({
     selector: "manager-tab-general-optional",
     templateUrl: "tab-general-optional.component.html",
     styleUrls: ["../design-common.scss"],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ManagerTabGeneralOptionalComponent implements OnInit, OnDestroy {
-  subCategories: string[];
-  podcast: Podcast;
+  subCategories!: string[];
+  podcast!: Podcast;
 
   constructor(
     private _bottomSheet: MatBottomSheet,
@@ -38,7 +40,7 @@ export class ManagerTabGeneralOptionalComponent implements OnInit, OnDestroy {
     this._bottomSheet.open(this.getSheet(name));
   }
 
-  getSheet(name: string) {
+  getSheet(name: string): ComponentType<HelpSheet> {
     switch (name) {
       case "titleDisplay":
         return TitleDisplayHelpSheet;
@@ -54,6 +56,8 @@ export class ManagerTabGeneralOptionalComponent implements OnInit, OnDestroy {
         return BlockHelpSheet;
       case "complete":
         return CompleteHelpSheet;
+      default:
+        throw new Error(`Unknown help sheet name: ${name}`);
     }
   }
 

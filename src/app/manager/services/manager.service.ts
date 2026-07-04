@@ -4,8 +4,8 @@ import { Subject } from "rxjs";
 
 @Injectable()
 export class ManagerService implements OnDestroy {
-  currentPodcast: Podcast;
-  currentPodcastEpisode: PodcastEpisode;
+  currentPodcast!: Podcast;
+  currentPodcastEpisode!: PodcastEpisode;
   podcastFeed: Subject<Podcast> = new Subject<Podcast>();
   podcastEpisodeFeed: Subject<PodcastEpisode> = new Subject<PodcastEpisode>();
 

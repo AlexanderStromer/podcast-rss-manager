@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, OnInit } from "@angular/core";
+import { Component, ViewChild, ElementRef, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FileManagementService } from "../../services";
 import { Podcast, FeedSerializer } from "podcast-feed-serializer";
 import { ManagerService } from "../services";
@@ -8,11 +8,12 @@ import { MatSnackBar } from "@angular/material/snack-bar";
     selector: "manager-header",
     templateUrl: "header.component.html",
     styleUrls: ["header.component.scss"],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ManagerHeaderComponent implements OnInit {
   private defaultPodcast: Podcast = new Podcast({ language: "en" });
-  @ViewChild("file") file: ElementRef;
+  @ViewChild("file") file!: ElementRef;
 
   constructor(
     private fileManagementService: FileManagementService,

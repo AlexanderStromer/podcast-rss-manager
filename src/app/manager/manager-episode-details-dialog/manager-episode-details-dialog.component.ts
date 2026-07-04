@@ -1,7 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { MatBottomSheet } from "@angular/material/bottom-sheet";
 import {
-  EpisodeTitleHelpSheet, EpisodeEpisodeUrlHelpSheet, EpisodeLengthHelpSheet, EpisodeDurationHelpSheet,
+  HelpSheet, EpisodeTitleHelpSheet, EpisodeEpisodeUrlHelpSheet, EpisodeLengthHelpSheet, EpisodeDurationHelpSheet,
   EpisodePublicationDateHelpSheet, EpisodeDescriptionHelpSheet, EpisodeEpisodeSiteUrlHelpSheet,
   EpisodeImageUrlHelpSheet, EpisodeExplicitHelpSheet, EpisodeTitleDisplayHelpSheet,
   EpisodeEpisodeHelpSheet, EpisodeSeasonHelpSheet, EpisodeEpisodeTypeHelpSheet, EpisodeBlockHelpSheet
@@ -9,15 +9,17 @@ import {
 import { ManagerService } from "../services";
 import { PodcastEpisode } from "podcast-feed-serializer";
 import { MatDialogRef } from "@angular/material/dialog";
+import { ComponentType } from "@angular/cdk/portal";
 
 @Component({
     selector: "manager-episode-details-dialog",
     templateUrl: "manager-episode-details-dialog.component.html",
     styleUrls: ["manager-episode-details-dialog.component.scss", "../design-common.scss"],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ManagerEpisodeDetailsDialogComponent implements OnInit {
-  podcastEpisode: PodcastEpisode;
+  podcastEpisode!: PodcastEpisode;
   showAllFields: boolean = false;
 
   constructor(
@@ -35,7 +37,7 @@ export class ManagerEpisodeDetailsDialogComponent implements OnInit {
     this._bottomSheet.open(this.getSheet(name));
   }
 
-  getSheet(name: string) {
+  getSheet(name: string): ComponentType<HelpSheet> {
     switch (name) {
       case "title":
         return EpisodeTitleHelpSheet;
@@ -65,6 +67,8 @@ export class ManagerEpisodeDetailsDialogComponent implements OnInit {
         return EpisodeEpisodeTypeHelpSheet;
       case "block":
         return EpisodeBlockHelpSheet;
+      default:
+        throw new Error(`Unknown help sheet name: ${name}`);
     }
   }
 

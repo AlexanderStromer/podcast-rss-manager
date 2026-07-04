@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { Podcast, PodcastEpisode } from "podcast-feed-serializer";
 import { ManagerService } from "../services";
@@ -9,11 +9,12 @@ import { UUID } from 'angular2-uuid';
     selector: "manager-tab-episodes",
     templateUrl: "tab-episodes.component.html",
     styleUrls: ["tab-episodes.component.scss", "../design-common.scss"],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ManagerTabEpisodesComponent implements OnInit, OnDestroy {
-  podcast: Podcast;
-  currentSelectedEpisode: number;
+  podcast!: Podcast;
+  currentSelectedEpisode!: number;
 
   constructor(
     private managerService: ManagerService,
